@@ -17,8 +17,8 @@ App.Views.Results = Backbone.View.extend({
   render: function() {
     var images = this.results.map(function(r) { return r.toJSON(); });
     var context = { "results": images, "query": images[0].query };
-    console.log("Rendering results like a boss");
-    console.log(context);
+    // console.log("Rendering results like a boss");
+    // console.log(context);
     $(this.el).html(this.template(context));
     return this;
   },
@@ -37,6 +37,7 @@ App.Views.Results = Backbone.View.extend({
 
   searchOnClick: function(e) {
     var q = $("#search_query").val();
+    _gaq.push(['_trackEvent', 'Search', 'click - results', q]);
     $("#progress").show();
     $("#results").hide();
     $("a#search_action").attr("href", "#search/" + q + "/1");
@@ -44,6 +45,7 @@ App.Views.Results = Backbone.View.extend({
 
   searchOnSubmit: function(e) {
     var q = $("#search_query").val();
+    _gaq.push(['_trackEvent', 'Search', 'submit - results', q]);
     $("#progress").show();
     $("#results").hide();
     eol.app.search(q, 1);

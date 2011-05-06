@@ -20,12 +20,14 @@ App.Views.Index = Backbone.View.extend({
 
   searchOnClick: function(e) {
     var q = $("#search_query").val();
+    _gaq.push(['_trackEvent', 'Search', 'click - index', q]);
     $("#progress").show();
     $("a#search_action").attr("href", "#search/" + q + "/1");
   },
 
   searchOnSubmit: function(e) {
     var q = $("#search_query").val();
+    _gaq.push(['_trackEvent', 'Search', 'submit - index', q]);
     $("#progress").show();
     eol.app.search(q, 1);
   }
