@@ -1,0 +1,17 @@
+.search
+  .logo
+    Logo Goes Here
+  .query
+    %form{:id => "search_form", :method => "post", :action => "/search"}
+      %input{:id => "search_query", :name => "q", :type => "text", :placeholder => "Species, latin, fugu examples"}
+      %a{:class => "large green awesome search_action"}
+        Find images
+  .results
+    Found 
+    = @media_url_list.count
+    search result(s) for
+    = @q
+    %ul
+    - @media_url_list.each do |u|
+      %li
+        %img{:src => u}/
