@@ -79,7 +79,7 @@ module InstantEol
     end
 
     def fetch_history()
-      settings.cache.get("history")
+      settings.cache.get("history") || []
     end
   end
 end
