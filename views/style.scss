@@ -52,6 +52,14 @@ body {
   padding: 0px;
   font-family: Helvetica, Helvetica Neue, Verdana, sans-serif;
 
+  a {
+    color: #999;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline
+  }
+
   #container {
     width: 820px;
     margin: 0px auto;
@@ -59,6 +67,23 @@ body {
     #progress {
       text-align: center;
       margin-top: 25px;
+    }
+
+    #previous {
+      text-align: center;
+      padding-top: 12px;
+      font-size: 8pt;
+      ul {
+        li:first-child {
+          font-weight: bold;
+        }
+
+        li {
+          display: inline;
+          list-style-type: none;
+          padding-right: 10px;
+        }
+      }
     }
 
     #main {
@@ -78,6 +103,21 @@ body {
         #results {
           td{
             padding: 8px;
+          }
+        }
+
+        #no_results {
+          padding-top: 50px;
+          .suggestions {
+            padding-top: 10px;
+            ul {
+              padding-top: 10px;
+              margin-left: 22px;
+              li {
+                list-style-type: lower-latin;
+                padding-right: 10px;
+              }
+            }
           }
         }
       }

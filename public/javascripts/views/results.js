@@ -4,9 +4,9 @@ App.Views.Results = Backbone.View.extend({
   template: Handlebars.compile($("#results-template").html()),
 
   events: {
-    // "click a.images_action"  : "imagesOnClick",
-    "click a#search_action"  : "searchOnClick",
-    "submit form"            : "searchOnSubmit"
+    "click a#search_action"           : "searchOnClick",
+    "submit form"                     : "searchOnSubmit",
+    "click a.suggested_search_action" : "searchSuggestedOnClick"
   },
 
   initialize: function(options) {
@@ -16,24 +16,15 @@ App.Views.Results = Backbone.View.extend({
 
   render: function() {
     var images = this.results.map(function(r) { return r.toJSON(); });
-    var context = { "results": images, "query": images[0].query };
+    var context = { "results": images, "query": this.results.search };
     // console.log("Rendering results like a boss");
     // console.log(context);
     $(this.el).html(this.template(context));
+    if (images.length == 0) {
+      $("#no_results").show();
+    }
     return this;
   },
-
-  // imagesOnClick: function(e) {
-  //   e.preventDefault();
-  //   var pageId = e.target.getAttribute("data-eol-page-id");
-  //   $.get("/images/" + pageId, function(data) {
-  //     var tmpl = Handlebars.compile($("#images-template").html());
-  //     console.log("Rendering images");
-  //     console.log(data.results.length);
-  //     $("#images").html(tmpl(data));
-  //   }, "json");
-  //
-  // },
 
   searchOnClick: function(e) {
     var q = $("#search_query").val();
@@ -49,6 +40,13 @@ App.Views.Results = Backbone.View.extend({
     $("#progress").show();
     $("#results").hide();
     eol.app.search(q, 1);
+  },
+
+  searchSuggestedOnClick: function(e) {
+    var q = e.target.getAttribute("data-search-query");
+    $("#search_query").val(q);
+    _gaq.push(['_trackEvent', 'Search', 'suggest - results', q]);
+    $("#progress").show();
   }
 
 });

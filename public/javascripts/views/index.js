@@ -4,8 +4,9 @@ App.Views.Index = Backbone.View.extend({
   template: Handlebars.compile($("#index-template").html()),
 
   events: {
-    "click a#search_action"  : "searchOnClick",
-    "submit form"            : "searchOnSubmit"
+    "click a#search_action"         : "searchOnClick",
+    "submit form"                   : "searchOnSubmit",
+    "click a.saved_search_action"   : "searchSavedOnClick"
   },
 
   initialize: function(args) {
@@ -30,5 +31,14 @@ App.Views.Index = Backbone.View.extend({
     _gaq.push(['_trackEvent', 'Search', 'submit - index', q]);
     $("#progress").show();
     eol.app.search(q, 1);
+  },
+
+  searchSavedOnClick: function(e) {
+    // var q = e.target.dataset.searchQuery; # new hotness
+    // var q = e.target.attributes.getNamedItem("data-search-query").value; # old and busted
+    var q = e.target.getAttribute("data-search-query");
+    $("#search_query").val(q);
+    _gaq.push(['_trackEvent', 'Search', 'saved - index', q]);
+    $("#progress").show();
   }
 });

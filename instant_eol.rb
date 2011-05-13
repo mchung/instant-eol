@@ -1,7 +1,9 @@
-require "sinatra/base"
-require "pp"
-require "eoflife"
-require "json"
+require 'sinatra/base'
+require 'eoflife'
+require 'json'
+require 'dalli'
+
+require 'pp'
 
 module InstantEol
   class Application < Sinatra::Base
@@ -12,8 +14,10 @@ module InstantEol
     set :static, true
     set :haml, :format => :html5
     set :sass, :style => :compact # default Sass style is :nested. Other options include :expanded and :compressed
+    set :cache, Dalli::Client.new
 
     get "/" do
+      @history = fetch_history()
       haml :index
     end
 
@@ -59,7 +63,23 @@ module InstantEol
         end
       end
       pp [:results, rv.size]
+      if rv.size > 0
+        update_history(query)
+      end
       { :search => query, :results => rv }.to_json
+    end
+
+    def update_history(query)
+      history = settings.cache.get("history") || []
+      if history.length == 10
+        history = history.last(history.length - 1)
+      end
+      history << query
+      settings.cache.set("history", history)
+    end
+
+    def fetch_history()
+      settings.cache.get("history")
     end
   end
 end

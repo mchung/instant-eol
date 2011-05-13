@@ -31,19 +31,36 @@
               %input{:id => "search_query", :type => "text", :placeholder => "Panthera Leo, Homo sapiens"}
               %a{:id => "search_action", :href => "#", :class => "large green awesome"}
                 Search Images
+            #previous
+              %ul
+                %li
+                  History:
+                - @history.each do |query|
+                  %li
+                    %a{:href => "/#search/#{query}/1", :class => "saved_search_action", :"data-search-query" => "#{query}"} #{query}
+
             #progress{:style => "display: none;"}
               %img{:src => "/images/ajax-loader.gif"}
 
         %script{:id => "results-template", :type => "text/x-handlebars-template"}
           .search
             .form
-              #logo EOL Image Search
+              #logo
+                %a{:href => "/"} EOL Image Search
               %form{:id => "search_form", :method => "get", :autocomplete => "off", :onsubmit => "return false;"}
                 %input{:id => "search_query", :type => "text", :placeholder => "Panthera Leo, Homo sapiens", :value => "{{query}}"}
                 %a{:id => "search_action", :href => "#", :class => "large green awesome"}
                   Search Images
             #progress{:style => "display: none;"}
               %img{:src => "/images/ajax-loader.gif"}
+            #no_results{:style => "display: none;"}
+              We couldn't find any images for '{{query}}'
+              .suggestions
+                Try searching for:
+                %ul
+                  - ["Panthera Leo", "Homo Sapiens", "Unicorn"].each do |query|
+                    %li
+                      %a{:href => "/#search/#{query}/1", :class => "suggested_search_action", :"data-search-query" => "#{query}"} #{query}
             #results
               %table
                 {{#images results}}
