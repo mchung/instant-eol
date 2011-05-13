@@ -11,4 +11,5 @@ group :development do
   gem "heroku"
   gem "shotgun"
   gem "thin"
+  gem "foreman"
 end
