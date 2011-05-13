@@ -26,7 +26,9 @@
       #templates
         %script{:id => "index-template", :type => "text/x-handlebars-template"}
           .index
-            #logo EOL Image Search
+            #logo
+              Search the
+              %a{:href => "http://eol.org"} Encyclopedia of Life
             %form{:id => "search_form", :method => "get", :autocomplete => "off", :onsubmit => "return false;"}
               %input{:id => "search_query", :type => "text", :placeholder => "Panthera Leo, Homo sapiens"}
               %a{:id => "search_action", :href => "#", :class => "large green awesome"}
