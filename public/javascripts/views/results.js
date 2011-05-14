@@ -20,7 +20,7 @@ App.Views.Results = Backbone.View.extend({
     // console.log("Rendering results like a boss");
     // console.log(context);
     $(this.el).html(this.template(context));
-    if (images.length == 0) {
+    if (images.length === 0) {
       $("#no_results").show();
     }
     return this;

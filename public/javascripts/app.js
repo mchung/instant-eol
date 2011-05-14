@@ -8,12 +8,13 @@ var App = {
 
     _.templateSettings = {
       interpolate : /\{\{(.+?)\}\}/g
-    },
+    };
 
     Handlebars.registerHelper('images', function(images, fn) {
       var out = "<tr>";
 
-      for(var i = 0, l = images.length; i < l; i++) {
+      var i = 0;
+      for(i = 0, l = images.length; i < l; i++) {
         out = out + "<td>" + fn(images[i]) + "</td>";
         if (i % 5 == 4) {
           out = out + "</tr><tr>";

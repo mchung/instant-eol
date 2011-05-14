@@ -29,7 +29,8 @@ App.Controllers.Search = Backbone.Controller.extend({
       // The server's url method signature matches the fragment
       rv.url = function() {
         return url;
-      }
+      };
+
       rv.fetch({
         success: function(collection, response) {
           // console.log("success");
