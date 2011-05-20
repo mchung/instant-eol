@@ -61,7 +61,7 @@ command in two different shells.
 
 * [Building a single page app with Backbone.js, underscore.js and jQuery][2].  A good introduction to Backbone.
 * [Misadventure, a demo app built on faux][4].  Make sure to read Misadventure Code Review, a series of blog posts walking through the source code.  (Instant-EOL does not use faux.)
-* [A Backbone.js Tutorial with Rails (Part 1)][5] and [http://www.jamesyu.org/2011/02/09/backbone.js-tutorial-with-rails-part-2/][6].  The two articles that most influenced the organization and structure of Instant-EOL.    
+* [A Backbone.js Tutorial with Rails (Part 1)][5] and [Part 2][6].  The two articles that most influenced the organization and structure of Instant-EOL.    
 * [Annotated source code for the todos.js][7].
 * [A backbone.js demo app][8]. Fire-https://github.com/ryandotsmith/fire-camp
 * [The Backbone Store, a demo app][3].  Check out the well-organized code in store.js.
@@ -74,15 +74,15 @@ command in two different shells.
 
 [1]: http://eol.org
 
-[2]: http://andyet.net/blog/2010/oct/29/building-a-single-page-app-with-backbonejs-undersc/
+[2]: http://andyet.net/blog/2010/oct/29/building-a-single-page-app-with-backbonejs-undersc
 
-[3]: http://elfsternberg.com/projects/backbone_store/
+[3]: http://elfsternberg.com/projects/backbone_store
 
 [4]: https://github.com/unspace/faux/tree/master/examples/misadventure
 
-[5]: http://www.jamesyu.org/2011/01/27/cloudedit-a-backbone-js-tutorial-by-example/
+[5]: http://www.jamesyu.org/2011/01/27/cloudedit-a-backbone-js-tutorial-by-example
 
-[6]: http://www.jamesyu.org/2011/02/09/backbone.js-tutorial-with-rails-part-2/
+[6]: http://www.jamesyu.org/2011/02/09/backbone.js-tutorial-with-rails-part-2
 
 [7]: http://documentcloud.github.com/backbone/docs/todos.html
 
@@ -92,15 +92,15 @@ command in two different shells.
 
 [10]: http://www.quora.com/What-are-some-good-resources-for-Backbone-js
 
-[11]: http://thinkvitamin.com/code/handlebars-js-part-2-partials-and-helpers/
+[11]: http://thinkvitamin.com/code/handlebars-js-part-2-partials-and-helpers
 
 [12]: https://gist.github.com/828553
 
-[13]: http://zeptojs.com/
+[13]: http://zeptojs.com
 
-[14]: http://documentcloud.github.com/backbone/
+[14]: http://documentcloud.github.com/backbone
 
-[15]: http://handlebars.strobeapp.com/
+[15]: http://handlebars.strobeapp.com
 
 [16]: http://sinatrarb.com
 
