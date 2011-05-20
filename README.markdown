@@ -63,9 +63,9 @@ command in two different shells.
 * [Misadventure, a demo app built on faux][4].  Make sure to read Misadventure Code Review, a series of blog posts walking through the source code.  (Instant-EOL does not use faux.)
 * [A Backbone.js Tutorial with Rails (Part 1)][5] and [Part 2][6].  The two articles that most influenced the organization and structure of Instant-EOL.    
 * [Annotated source code for the todos.js][7].
-* [A backbone.js demo app][8]. Fire-https://github.com/ryandotsmith/fire-camp
+* [FireCamp, a Backbone.js demo app (Sinatra Backend)][8].
 * [The Backbone Store, a demo app][3].  Check out the well-organized code in store.js.
-* [Backbone Mobile, a demo app][9].
+* [Backbone Mobile, a demo app (CoffeeScript)][9].
 * [The mother of all Backbone resources][10].
 * [How to use Handlebars.js][11].
 * [A simple Backbone app][12].
