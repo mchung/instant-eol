@@ -19,6 +19,20 @@ The rest of the application is written with:
 * [Haml][17] and [Scss][18]
 * [Dalli][19]
 
+## Overview
+
+I'm planning to document several parts of the application.
+
+The JavaScript application is initialized in app.js
+
+<script src="https://gist.github.com/992681.js?file=app.js"></script>
+
+The single controller is located in search.js
+
+<script src="https://gist.github.com/992681.js?file=search.js"></script>
+
+[Current progress][21]
+
 ## Dependencies
 
 * ruby-1.9.2-p180
@@ -108,3 +122,5 @@ command in two different shells.
 [18]: http://sass-lang.com
 
 [19]: https://github.com/mperham/dalli
+
+[21]: https://gist.github.com/992681
