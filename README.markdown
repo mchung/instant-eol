@@ -21,17 +21,7 @@ The rest of the application is written with:
 
 ## Overview
 
-I'm planning to document several parts of the application.
-
-The JavaScript application is initialized in app.js
-
-<script src="https://gist.github.com/992681.js?file=app.js" markdown="1"></script>
-
-The single controller is located in search.js
-
-<script src="https://gist.github.com/992681.js?file=search.js" markdown="1"></script>
-
-[Current progress][21]
+I'm planning to document several parts of the application. [Review the current progress][21].
 
 ## Dependencies
 
